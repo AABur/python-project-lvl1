@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: aabur-brain-games
+Version: 0.1.0
+Summary: My first Python project _(Hexlet study)_
+Home-page: UNKNOWN
+Author: AABur
+Author-email: aabur@mail.ru
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.8,<4.0
