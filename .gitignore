@@ -139,6 +139,5 @@ dmypy.json
 .pytype/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
-×
-Drag and Drop
-The image will be downloaded
+
+.vscode/settings.json
