@@ -13,5 +13,4 @@ def welcome_user(task_msg):
 
 def answer(question):
     print("Question: {}".format(question))
-    ans = prompt.string("Your answer: ")
-    return ans
+    return prompt.string("Your answer: ")

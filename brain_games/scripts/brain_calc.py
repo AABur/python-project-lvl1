@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import random
-from brain_games.cli import welcome_user
-from brain_games.cli import answer
+
+from brain_games.cli import answer, welcome_user
 from brain_games.calc import calc
 
 
