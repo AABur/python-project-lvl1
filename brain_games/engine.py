@@ -5,7 +5,7 @@ from brain_games.cli import qa_dialog, welcone_dialog, wrong_answer, сongratula
 
 def run_game(game_name, game_description):
     user_name = welcone_dialog(game_description)
-    for i in range(3):
+    for _ in range(3):
         game_result = game_name()
         game_task = game_result[0]
         game_answer = game_result[1]
