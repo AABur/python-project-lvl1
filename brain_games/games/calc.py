@@ -1,10 +1,15 @@
-    """Game logic."""
+"""Calc game logic"""
+# + add
+# - sub
+# * mul
+# TODO - refactor if-elif-else
+
 from random import randint, choice
 
 
 def game_calc():
-    num1 = randint(1, 100)
-    num2 = randint(1, 100)
+    num1 = randint(1, 20)
+    num2 = randint(1, 20)
     oper = choice("+-*")
     if oper == "+":
         correct_answer = num1 + num2
@@ -13,4 +18,4 @@ def game_calc():
     else:
         correct_answer = num1 * num2
     task = "{} {} {}".format(num1, oper, num2)
-    return (task, correct_answer)
+    return (str(task), str(correct_answer))
