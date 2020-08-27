@@ -3,7 +3,7 @@
 import random
 
 from brain_games.cli import answer, welcome_user
-from brain_games.calc import calc
+from brain_games.games.calc import calc
 
 
 def main():

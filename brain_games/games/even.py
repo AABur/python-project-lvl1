@@ -1,5 +1,4 @@
-def even(num):
-    print("GAMES")
+def game_even(num):
     if num % 2:
         return "no"
     else:

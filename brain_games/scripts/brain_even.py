@@ -3,7 +3,7 @@
 import random
 
 from brain_games.cli import answer, welcome_user
-from brain_games.even import even
+from brain_games.games.even import game_even
 
 
 def main():
@@ -12,7 +12,7 @@ def main():
     while i < 4:
         num = random.randint(1, 100)
         ans = answer(num)
-        correct = even(num)
+        correct = game_even(num)
         if correct == ans:
             print("Correct!")
         else:
