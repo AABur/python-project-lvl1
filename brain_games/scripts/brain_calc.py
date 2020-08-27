@@ -1,30 +1,24 @@
 #!/usr/bin/env python3
+    """game script."""
 
-import random
-
-from brain_games.cli import answer, welcome_user
-from brain_games.games.calc import calc
+from brain_games.cli import welcone_dialog, qa_dialog, сongratulations, wrong_answer
+from brain_games.games.calc import game_calcqa_dialog, сongratulations, wrong_answer
+from brain_games.games.calc import game_calc
 
 
 def main():
-    name = welcome_user("What is the result of the expression?")
+    user_name = welcone_dialog("What is the result of the expression?")
     i = 1
     while i < 4:
-        num1 = random.randint(1, 100)
-        num2 = random.randint(1, 100)
-        correct = calc(num1, num2)
-        ans = answer(str(num1) + " ? " + str(num2))
-        correct = calc(num1, num2)
-        if correct == ans:
-            print("Correct!")
-        else:
-            return print(
-                "{} is wrong answer ;(. Correct answer was {}.\nLet's try again, {}!".format(
-                    ans, correct, name
-                )
-            )
+        game = game_calc
+        print(game)  # TODO - remove it
+        task = game_calc[0]
+        correct_answer = game_calc[1]
+        user_answer = qa_dialog(task)
+        if user_answer != correct_answer:
+            wrong_answer(user_answer, correct_answer, user_name)
         i += 1
-    print("Congratulations, {}!".format(name))
+    сongratulations(user_name)
 
 
 if __name__ == "__main__":
