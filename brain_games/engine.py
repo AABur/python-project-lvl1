@@ -1,18 +1,27 @@
 """Brain Games Engine."""
 
-from brain_games.cli import qa_dialog, welcone_dialog, wrong_answer, сongratulations
+from brain_games.cli import (
+    congratulations,
+    correct,
+    qa_dialog,
+    welcome_dialog,
+    wrong_answer,
+)
 
 
 def run_game(game_name, game_description):
-    user_name = welcone_dialog(game_description)
-    for i in range(3):
-        game_result = game_name()
-        game_task = game_result[0]
-        game_answer = game_result[1]
+    """Runing the game.
+
+    Args:
+        game_name (): game module from brain_games/games
+        game_description (str): game description
+    """
+    user_name = welcome_dialog(game_description)
+    for _ in range(3):
+        (game_task, game_answer) = game_name()
         user_answer = qa_dialog(game_task)
         if user_answer != game_answer:
             wrong_answer(user_answer, game_answer, user_name)
             return
-        else:
-            print("Correct!")
-    сongratulations(user_name)
+        correct()
+    congratulations(user_name)

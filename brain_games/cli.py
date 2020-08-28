@@ -1,9 +1,10 @@
-""" Command line interface """
+"""Command line interface."""
+
 import prompt
 
 
-def welcone_dialog(task_msg):
-    """Welcome dialog
+def welcome_dialog(task_msg):
+    """Welcome dialog.
 
     Args:
         task_msg (str): Game description
@@ -11,17 +12,20 @@ def welcone_dialog(task_msg):
     Returns:
         (str): User Name
     """
-    print("\nWelcome to the Brain Games!")
-    print(task_msg + "\n")
+    print("Welcome to the Brain Games!")
+    print("{}\n".format(task_msg))
     name = prompt.string("May I have your name? ")
     print("Hello, {}!\n".format(name))
     return name
 
 
 def qa_dialog(task):
-    """Q&A dialog
+    """Q&A dialog.
 
     Show the task and request user answer
+
+    Args:
+        task (str): task example
 
     Returns:
         (str): User answer
@@ -30,8 +34,8 @@ def qa_dialog(task):
     return prompt.string("Your answer: ")
 
 
-def сongratulations(user_name):
-    """User congratilations
+def congratulations(user_name):
+    """User congratilations.
 
     Args:
         user_name (str): User name
@@ -40,7 +44,7 @@ def сongratulations(user_name):
 
 
 def wrong_answer(user_answer, correct_answer, user_name):
-    """Wrong answer info fo user
+    """Wrong answer info fo user.
 
     Inform user about correct answer
     Interupt the game
@@ -51,8 +55,12 @@ def wrong_answer(user_answer, correct_answer, user_name):
         user_name (str): User Answer
     """
     print(
-        "\033[31m'{}'\033[m is wrong answer ;(. Correct answer was \033[31m'{}'\033[m.".format(
+        '\033[31m"{}"\033[m is wrong answer ;(. Correct answer was \033[31m"{}"\033[m.'.format(
             user_answer, correct_answer
         )
     )
     print("Let's try again, \033[1m{}\033[m!".format(user_name))
+
+
+def correct():
+    print("Correct!")

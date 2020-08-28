@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-from brain_games.cli import welcone_dialog
+from brain_games.cli import welcome_dialog
 
 
 def main():
-    welcone_dialog("")
+    welcome_dialog("")
 
 
 if __name__ == "__main__":
