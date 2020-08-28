@@ -14,7 +14,7 @@ _(Hexlet study - python-project-lvl1)_
 
 ## About <a name = "about"></a>
 
-Это первый из четырёх проектов обучения по курсу Профессия Python-программист на Hexlet.io
+This is the first of four training projects on the Python Software Developer course on Hexlet.io.
 <https://ru.hexlet.io/professions/python/projects/49>
 
 ## Getting Started <a name = "getting_started"></a>
