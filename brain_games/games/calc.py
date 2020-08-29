@@ -1,26 +1,27 @@
-"""Calc game logic."""
-# + add
-# - sub
-# * mul
-# TODO - refactor if-elif-else
+"""Calc game engine."""
 
-from random import choice, randint
+from operator import add, mul, sub
+from random import randint
+
+GAME_DESCRIPTION = "What is the result of the expression?"
+FUNC_LIST = ((add, '+'), (sub, '-'), (mul, '*'))
+MIN_NUM = 1
+MAX_NUM = 20
 
 
 def game_calc():
-    """Calc game logic.
+    """Calc game Q&A generation.
+
+    generate two random numbers
+    and calculate result of random operation from list
 
     Returns:
-        str: task, correct answer
+        task{str} : operation description;
+        answer{str} : result of operation
     """
-    num1 = randint(1, 100)
-    num2 = randint(1, 100)
-    oper = choice("+-*")
-    if oper == "+":
-        correct_answer = num1 + num2
-    elif oper == "-":
-        correct_answer = num1 - num2
-    else:
-        correct_answer = num1 * num2
-    task = "{} {} {}".format(num1, oper, num2)
-    return (str(task), str(correct_answer))
+    num1 = randint(MIN_NUM, MAX_NUM)
+    num2 = randint(MIN_NUM, MAX_NUM)
+    oper = randint(0, len(FUNC_LIST) - 1)
+    answer = FUNC_LIST[oper][0](num1, num2)
+    task = "{} {} {}".format(num1, FUNC_LIST[oper][1], num2)
+    return (str(task), str(answer))
