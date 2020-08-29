@@ -3,12 +3,12 @@
 
 
 from brain_games.engine import run_game
-from brain_games.games.progression import game_progression
+from brain_games.games.progression import GAME_DESCRIPTION, game_progression
 
 
 def main():
     """Progression game script."""
-    run_game(game_progression, "What number is missing in the progression?")
+    run_game(game_progression, GAME_DESCRIPTION)
 
 
 if __name__ == "__main__":

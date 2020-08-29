@@ -1,22 +1,29 @@
 """Progression game logic."""
-# TODO - too many local variables
+
 from random import randint
+
+GAME_DESCRIPTION = "What number is missing in the progression?"
+STP_MIN_MAX = (1, 5)  # arithmetic progression step
+FST_MIN_MAX = (1, 20)  # arithmetic progression first number
+NUMBER = 10  # arithmetic progression length
 
 
 def game_progression():
-    """Progression game logic.
+    """Progression game Q&A generation.
+
+    It forms an arithmetic progression,
+    replacing one of the numbers with two points.
 
     Returns:
-        str: task, correct answer
+        task{str} : arithmetic progression;
+        answer{str} : hidden number
     """
-    strt = randint(1, 10)
-    stp = randint(1, 10)
-    hdn = randint(1, 10)
-    cnt = 10
-    lst = [strt]
-    for _ in range(cnt - 1):
-        lst.append(lst[-1] + stp)
-    correct_answer = lst[hdn - 1]
-    lst[hdn - 1] = ".."
-    task = "{}".format(lst)
-    return (str(task), str(correct_answer))
+    step = randint(STP_MIN_MAX[0], STP_MIN_MAX[1])
+    hidden = randint(FST_MIN_MAX[0], FST_MIN_MAX[1])
+    a_progression = [randint(1, 10)]
+    for _ in range(NUMBER - 1):
+        a_progression.append(a_progression[-1] + step)
+    answer = a_progression[hidden - 1]
+    a_progression[hidden - 1] = ".."
+    task = "{}".format(a_progression)
+    return (str(task), str(answer))
