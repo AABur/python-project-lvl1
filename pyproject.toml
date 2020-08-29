@@ -11,6 +11,8 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.8"
 prompt = "^0.4.1"
+primePy = "^1.3"
+pyprimer = "^0.1.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.3"
@@ -32,6 +34,7 @@ brain-even = "brain_games.scripts.brain_even:main"
 brain-calc = "brain_games.scripts.brain_calc:main"
 brain-gcd = "brain_games.scripts.brain_gcd:main"
 brain-progression = "brain_games.scripts.brain_progression:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
 
 [tool.isort]
 multi_line_output = 3
