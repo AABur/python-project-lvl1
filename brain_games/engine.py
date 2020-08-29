@@ -13,8 +13,8 @@ def run_game(game_name, game_description):
     """Runing the game.
 
     Args:
-        game_name (): game module from brain_games/games
-        game_description (str): game description
+        game_name : game module from brain_games/games
+        game_description : game description
     """
     user_name = welcome_dialog(game_description)
     for _ in range(3):

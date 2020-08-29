@@ -55,12 +55,12 @@ def wrong_answer(user_answer, correct_answer, user_name):
         user_name (str): User Answer
     """
     print(
-        '\033[31m"{}"\033[m is wrong answer ;(. Correct answer was \033[31m"{}"\033[m.'.format(
-            user_answer, correct_answer
-        )
+        '\033[31m"{}"\033[m is wrong answer ;(. Correct answer was \033[31m"{}"\033[m.'
+        .format(user_answer, correct_answer)
     )
     print("Let's try again, \033[1m{}\033[m!".format(user_name))
 
 
 def correct():
+    """Just Correct"""
     print("Correct!")
