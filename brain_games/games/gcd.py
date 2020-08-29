@@ -1,25 +1,18 @@
-"""GCD game engine."""
+"""GCD game logic."""
+
 
 from math import gcd
 from random import randint
 
-GAME_DESCRIPTION = "Find the greatest common divisor of given numbers."
-MIN_NUM = 1
-MAX_NUM = 20
-
 
 def game_gcd():
-    """GCD game Q&A generation.
-
-    generate two random Numbers
-    and calculate greatest common divider
+    """GCD game logic.
 
     Returns:
-        task{str} : two Numbers;
-        answer{str} : greatest common divider
+        str: task, correct answer
     """
-    num1 = randint(MIN_NUM, MAX_NUM)
-    num2 = randint(MIN_NUM, MAX_NUM)
+    num1 = randint(1, 100)
+    num2 = randint(1, 100)
     correct_answer = gcd(num1, num2)
     task = "{} {}".format(num1, num2)
     return (str(task), str(correct_answer))
