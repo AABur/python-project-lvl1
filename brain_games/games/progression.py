@@ -3,8 +3,8 @@
 from random import randint
 
 GAME_DESCRIPTION = "What number is missing in the progression?"
-STP_MIN_MAX = (1, 5)  # arithmetic progression step
-FST_MIN_MAX = (1, 20)  # arithmetic progression first number
+SATRT_MIN_MAX = (1, 20)  # arithmetic progression first number
+STEP_MIN_MAX = (1, 5)  # arithmetic progression step
 NUMBER = 10  # arithmetic progression length
 
 
@@ -18,12 +18,14 @@ def game_progression():
         task{str} : arithmetic progression;
         answer{str} : hidden number
     """
-    step = randint(STP_MIN_MAX[0], STP_MIN_MAX[1])
-    hidden = randint(FST_MIN_MAX[0], FST_MIN_MAX[1])
-    a_progression = [randint(1, 10)]
-    for _ in range(NUMBER - 1):
-        a_progression.append(a_progression[-1] + step)
-    answer = a_progression[hidden - 1]
-    a_progression[hidden - 1] = ".."
-    task = "{}".format(a_progression)
-    return (str(task), str(answer))
+    start = randint(SATRT_MIN_MAX[0], SATRT_MIN_MAX[1])
+    step = randint(STEP_MIN_MAX[0], STEP_MIN_MAX[1])
+    # arithmetic progression
+    a_progression = list(range(start, start + step * NUMBER, step))
+    # hidden number
+    answer = str(a_progression[randint(1, NUMBER) - 1])
+    # convert list to string and remove symbols , [ ]
+    task = "{}".format(a_progression).replace(",", "")[1:-1]
+    # replace hidden number for '..'
+    task = task.replace(answer, "..")
+    return (task, answer)
