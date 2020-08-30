@@ -13,7 +13,7 @@ def welcome_dialog(task_msg):
         (str): User Name
     """
     print("Welcome to the Brain Games!\n{}\n".format(task_msg))
-    name = prompt.string("May I have your name? ")
+    name = prompt.string("May I have your name?")
     print("Hello, {}!\n".format(name))
     return name
 

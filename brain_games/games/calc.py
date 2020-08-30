@@ -1,7 +1,7 @@
 """Calc game engine."""
 
 from operator import add, mul, sub
-from random import randint
+from random import choice, randint
 
 GAME_DESCRIPTION = "What is the result of the expression?"
 FUNC_LIST = ((add, '+'), (sub, '-'), (mul, '*'))
@@ -21,7 +21,7 @@ def game_calc():
     """
     num1 = randint(MIN_NUM, MAX_NUM)
     num2 = randint(MIN_NUM, MAX_NUM)
-    oper = randint(0, len(FUNC_LIST) - 1)
-    answer = FUNC_LIST[oper][0](num1, num2)
-    task = "{} {} {}".format(num1, FUNC_LIST[oper][1], num2)
+    operation = choice(FUNC_LIST)
+    answer = operation[0](num1, num2)
+    task = "{} {} {}".format(num1, operation[1], num2)
     return (str(task), str(answer))
