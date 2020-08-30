@@ -20,6 +20,6 @@ def game_gcd():
     """
     num1 = randint(MIN_NUM, MAX_NUM)
     num2 = randint(MIN_NUM, MAX_NUM)
-    correct_answer = gcd(num1, num2)
+    answer = str(gcd(num1, num2))
     task = "{} {}".format(num1, num2)
-    return (str(task), str(correct_answer))
+    return (task, answer)

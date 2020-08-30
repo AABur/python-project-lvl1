@@ -4,6 +4,7 @@ from random import randint
 GAME_DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'."
 MIN_NUM = 1
 MAX_NUM = 20
+YES_NO = ("yes", "no")
 
 
 def game_even():
@@ -16,7 +17,6 @@ def game_even():
         answer{str} : Even status
     """
     num = randint(MIN_NUM, MAX_NUM)
-    answer = ("yes", "no")
-    correct_answer = answer[num % 2]
+    answer = YES_NO[num % 2]
     task = "{}".format(num)
-    return (str(task), str(correct_answer))
+    return (task, answer)

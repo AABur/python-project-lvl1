@@ -23,4 +23,4 @@ def game_prime():
     num = randint(MIN_NUM, MAX_NUM)
     answer = YES_NO[not is_prime(num)]
     task = "{}".format(num)
-    return (str(task), str(answer))
+    return (task, answer)

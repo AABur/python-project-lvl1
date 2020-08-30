@@ -22,6 +22,6 @@ def game_calc():
     num1 = randint(MIN_NUM, MAX_NUM)
     num2 = randint(MIN_NUM, MAX_NUM)
     operation = choice(FUNC_LIST)
-    answer = operation[0](num1, num2)
+    answer = str(operation[0](num1, num2))
     task = "{} {} {}".format(num1, operation[1], num2)
-    return (str(task), str(answer))
+    return (task, answer)
