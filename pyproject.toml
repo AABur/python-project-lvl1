@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "AABur_brain_games"
-version = "2.0.1"
+version = "0.5.0"
 description = "first of four training projects on the Python Software Developer course on Hexlet.io"
 authors = ["AABur <aabur@mail.ru>"]
 license = "MIT License"
