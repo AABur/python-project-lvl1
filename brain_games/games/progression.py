@@ -20,12 +20,8 @@ def game_progression():
     """
     start = randint(SATRT_MIN_MAX[0], SATRT_MIN_MAX[1])
     step = randint(STEP_MIN_MAX[0], STEP_MIN_MAX[1])
-    # arithmetic progression
-    a_progression = list(range(start, start + step * NUMBER, step))
-    # hidden number
-    answer = str(a_progression[randint(1, NUMBER) - 1])
-    # convert list to string and remove symbols , [ ]
+    a_progression = [(start + (ind * step)) for ind in range(NUMBER)]
+    answer = str(a_progression[randint(1, NUMBER) - 1])  # hidden number
     task = "{}".format(a_progression).replace(",", "")[1:-1]
-    # replace hidden number for '..'
     task = task.replace(answer, "..")
     return (task, answer)
