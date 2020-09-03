@@ -1,4 +1,4 @@
-"""GCD game logic."""
+"""GCD game engine."""
 
 from math import gcd
 from random import randint
@@ -8,7 +8,7 @@ MIN_NUM = 1
 MAX_NUM = 20
 
 
-def game_gcd():
+def run_gcd():
     """GCD game Q&A generation.
 
     generate two random Numbers
