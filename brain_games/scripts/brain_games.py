@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Game script."""
 
-from brain_games.cli import welcome_dialog
+from brain_games.cli import welcome_user
 
 
 def main():
-    """Game script."""
-    welcome_dialog("")
+    print("Welcome to the Brain Games!")
+    welcome_user()
 
 
 if __name__ == "__main__":
