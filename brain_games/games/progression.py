@@ -3,9 +3,11 @@
 from random import randint
 
 GAME_DESCRIPTION = "What number is missing in the progression?"
-SATRT_MIN_MAX = (1, 20)  # arithmetic progression first number
-STEP_MIN_MAX = (1, 10)  # arithmetic progression step
-NUMBER = 10  # arithmetic progression length
+START_MIN = 1
+START_MAX = 20
+STEP_MIN = 1
+STEP_MAX = 10
+PROGERSSION_LENGTH = 10
 
 
 def game_progression():
@@ -18,11 +20,12 @@ def game_progression():
         task{str} : arithmetic progression;
         answer{str} : hidden number
     """
-    start = randint(SATRT_MIN_MAX[0], SATRT_MIN_MAX[1])
-    step = randint(STEP_MIN_MAX[0], STEP_MIN_MAX[1])
-    a_progression = [(start + (ind * step)) for ind in range(NUMBER)]
-    hidden = randint(1, NUMBER)
+    start = randint(START_MIN, START_MAX)
+    step = randint(STEP_MIN, STEP_MAX)
+    a_progression = [(start + (ind * step))
+                     for ind in range(PROGERSSION_LENGTH)]
+    hidden = randint(1, PROGERSSION_LENGTH)
     answer = str(a_progression[hidden - 1])
     a_progression[hidden - 1] = ".."
-    task = ' '.join(str(ind) for ind in a_progression)
+    task = " ".join(str(ind) for ind in a_progression)
     return (task, answer)
