@@ -1,4 +1,4 @@
-"""Even game logic."""
+"""Even game engine."""
 from random import randint
 
 GAME_DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'."
@@ -6,7 +6,7 @@ MIN_NUM = 1
 MAX_NUM = 20
 
 
-def game_even():
+def run_even():
     """Even game Q&A generation.
 
     generate random Number and check if a Number is Even

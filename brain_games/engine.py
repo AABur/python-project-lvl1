@@ -3,7 +3,7 @@
 import prompt
 
 
-def welcome_dialog(task_msg):
+def get_user_name(task_msg):
     """Welcome dialog.
 
     Args:
@@ -18,7 +18,7 @@ def welcome_dialog(task_msg):
     return name
 
 
-def qa_dialog(task):
+def get_user_answer(task):
     """Q&A dialog.
 
     Show the task and request user answer
@@ -33,7 +33,7 @@ def qa_dialog(task):
     return prompt.string("Your answer: ")
 
 
-def congratulations(user_name):
+def congratulate(user_name):
     """User congratilations.
 
     Args:
@@ -42,11 +42,10 @@ def congratulations(user_name):
     print("Congratulations, {}".format(user_name))
 
 
-def wrong_answer(user_answer, correct_answer, user_name):
+def notify_wrong_answer(user_answer, correct_answer, user_name):
     """Wrong answer info fo user.
 
     Inform user about wrong answer
-    Interupt the game
 
     Args:
         user_answer (str): User Answer
@@ -58,29 +57,29 @@ def wrong_answer(user_answer, correct_answer, user_name):
     print("Let's try again, {}".format(user_name))
 
 
-def correct():
-    """Just Correct."""
+def confirm_correct_answer():
+    """Just confirm correct answer."""
     print("Correct!")
 
 
-STEPS = 3  # number of game steps
+GAME_STEPS = 3
 
 
-def run_game(game_name, game_description):
+def run_game(game_engine, game_description):
     """Brain Games Engine.
 
     Executing game process
 
     Args:
-        game_name (function): game logic module
+        game_engine (function): game engine module
         game_description (str): game rules
     """
-    user_name = welcome_dialog(game_description)
-    for _ in range(STEPS):
-        (game_task, game_answer) = game_name()
-        user_answer = qa_dialog(game_task)
+    user_name = get_user_name(game_description)
+    for step in range(GAME_STEPS):
+        (game_task, game_answer) = game_engine()
+        user_answer = get_user_answer(game_task)
         if user_answer != game_answer:
-            wrong_answer(user_answer, game_answer, user_name)
+            notify_wrong_answer(user_answer, game_answer, user_name)
             return
-        correct()
-    congratulations(user_name)
+        confirm_correct_answer()
+    congratulate(user_name)
