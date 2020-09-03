@@ -6,7 +6,7 @@
 
 This is the first of four training projects on the Python Software Developer course on [Hexlet.io](https://ru.hexlet.io/professions/python/projects/49)
 
-The pakage contains five simple mathematics quizes:
+The pakage contains five simple mathematics quiz games:
 
 - Even check `brain-even`
 - Calculator `brain-calc`
@@ -26,12 +26,15 @@ pip install --extra-index-url https://test.pypi.org/simple/ aabur-brain-games
 
 ## Usage
 
-```bash
-brain-even
-brain-calc
-```
+To start the game, just run the required module from the terminal
 
-[![asciicast](https://asciinema.org/a/GqF3uDgD9afi4Znqck7eVEZK6.svg)](https://asciinema.org/a/GqF3uDgD9afi4Znqck7eVEZK6?speed=2)
+### Run with correct answers
+
+[![asciicast](https://asciinema.org/a/rKtNdgXwvfXr9hJ65MuJuDnVa.svg)](https://asciinema.org/a/rKtNdgXwvfXr9hJ65MuJuDnVa?speed=3)
+
+### Run with wrong answers
+
+[![asciicast](https://asciinema.org/a/IxGZofPK3yMJ3ftciakV1Pwfu.svg)](https://asciinema.org/a/IxGZofPK3yMJ3ftciakV1Pwfu?speed=3)
 
 ## Contributing
 
