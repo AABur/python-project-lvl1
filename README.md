@@ -10,7 +10,7 @@ The pakage contains five simple mathematics quiz games:
 
 - Even check `brain-even`
 - Calculator `brain-calc`
-- Gratest common divider `barin-gcd`
+- Greatest common divider `barin-gcd`
 - Arithmetic progression `brain-progression`
 - Prime number `brain-prime`
 
