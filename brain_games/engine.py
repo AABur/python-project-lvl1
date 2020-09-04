@@ -2,17 +2,35 @@
 
 import prompt
 
+GAME_STEPS = 3
 
-def get_user_name(task_msg):
-    """Welcome dialog.
+
+def run_game(game_module):
+    """Brain Games Engine.
+
+    Executing game process
 
     Args:
-        task_msg (str): Game description
+        game_module (function): game engine module
+    """
+    say_welcome(game_module.GAME_DESCRIPTION)
+    user_name = get_user_name()
+    for step in range(GAME_STEPS):
+        (game_task, game_answer) = game_module.game_engine()
+        user_answer = get_user_answer(game_task)
+        if user_answer != game_answer:
+            notify_wrong_answer(user_answer, game_answer, user_name)
+            return
+        confirm_correct_answer()
+    congratulate(user_name)
+
+
+def get_user_name():
+    """Get user name dialog.
 
     Returns:
         (str): User Name
     """
-    print("Welcome to the Brain Games!\n{}\n".format(task_msg))
     name = prompt.string("May I have your name? ")
     print("Hello, {}!\n".format(name))
     return name
@@ -29,8 +47,12 @@ def get_user_answer(task):
     Returns:
         (str): User answer
     """
-    print("Question: {}".format(task))
-    return prompt.string("Your answer: ")
+    return prompt.string("Question: {}\nYour answer: ".format(task))
+
+
+def say_welcome(task_msg):
+    """Say welcome and print game rules."""
+    print("Welcome to the Brain Games!\n{}\n".format(task_msg))
 
 
 def congratulate(user_name):
@@ -54,32 +76,9 @@ def notify_wrong_answer(user_answer, correct_answer, user_name):
     """
     print("'{}' is wrong answer ;(. Correct answer was '{}'.".format(
         user_answer, correct_answer))
-    print("Let's try again, {}".format(user_name))
+    print("Let's try again, {}!".format(user_name))
 
 
 def confirm_correct_answer():
     """Just confirm correct answer."""
     print("Correct!")
-
-
-GAME_STEPS = 3
-
-
-def run_game(game_engine, game_description):
-    """Brain Games Engine.
-
-    Executing game process
-
-    Args:
-        game_engine (function): game engine module
-        game_description (str): game rules
-    """
-    user_name = get_user_name(game_description)
-    for step in range(GAME_STEPS):
-        (game_task, game_answer) = game_engine()
-        user_answer = get_user_answer(game_task)
-        if user_answer != game_answer:
-            notify_wrong_answer(user_answer, game_answer, user_name)
-            return
-        confirm_correct_answer()
-    congratulate(user_name)

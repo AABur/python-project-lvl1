@@ -3,12 +3,12 @@
 
 
 from brain_games.engine import run_game
-from brain_games.games.progression import GAME_DESCRIPTION, run_progression
+from brain_games.games import progression
 
 
 def main():
     """Progression game script."""
-    run_game(run_progression, GAME_DESCRIPTION)
+    run_game(progression)
 
 
 if __name__ == "__main__":
