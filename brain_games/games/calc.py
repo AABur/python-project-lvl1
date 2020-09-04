@@ -11,7 +11,7 @@ MIN_NUM = 1
 MAX_NUM = 20
 
 
-def run_calc():
+def game_engine():
     """Calc game Q&A generation.
 
     generate two random numbers

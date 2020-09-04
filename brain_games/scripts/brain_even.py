@@ -2,12 +2,12 @@
 """Even game script."""
 
 from brain_games.engine import run_game
-from brain_games.games.even import GAME_DESCRIPTION, run_even
+from brain_games.games import even
 
 
 def main():
     """Even game script."""
-    run_game(run_even, GAME_DESCRIPTION)
+    run_game(even)
 
 
 if __name__ == "__main__":

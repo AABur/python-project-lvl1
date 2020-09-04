@@ -11,7 +11,7 @@ STEP_MAX = 10
 PROGERSSION_LENGTH = 10
 
 
-def run_progression():
+def game_engine():
     """Progression game Q&A generation.
 
     It forms an arithmetic progression,
