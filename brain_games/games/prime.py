@@ -1,8 +1,8 @@
 """Prime game engine."""
 
-from random import randint
+import random
 
-from pyprimer import is_prime
+import pyprimer
 
 GAME_DESCRIPTION = "Answer 'yes' if number prime otherwise answer 'no'."
 
@@ -19,7 +19,7 @@ def run_prime():
         task{str} : Number;
         answer{str} : Prime status
     """
-    num = randint(MIN_NUM, MAX_NUM)
-    answer = "yes" if is_prime(num) else "no"
+    num = random.randint(MIN_NUM, MAX_NUM)
+    answer = "yes" if pyprimer.is_prime(num) else "no"
     task = "{}".format(num)
     return (task, answer)
