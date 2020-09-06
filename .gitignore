@@ -2,5 +2,6 @@
 __pycache__
 dist/
 *.pyc
-.venv/
-.vscode/settings.json
+/.venv/
+/.gtm/
+/.vscode/
