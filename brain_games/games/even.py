@@ -8,7 +8,7 @@ MIN_NUM = 1
 MAX_NUM = 20
 
 
-def game_engine():
+def get_task():
     """Even game Q&A generation.
 
     generate random Number and check if a Number is Even

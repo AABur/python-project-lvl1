@@ -5,13 +5,13 @@ from operator import add, mul, sub
 
 GAME_DESCRIPTION = "What is the result of the expression?"
 
-FUNC_LIST = ((add, '+'), (sub, '-'), (mul, '*'))
+OPERATIONS = ((add, '+'), (sub, '-'), (mul, '*'))
 
 MIN_NUM = 1
 MAX_NUM = 20
 
 
-def game_engine():
+def get_task():
     """Calc game Q&A generation.
 
     generate two random numbers
@@ -23,7 +23,7 @@ def game_engine():
     """
     num1 = random.randint(MIN_NUM, MAX_NUM)
     num2 = random.randint(MIN_NUM, MAX_NUM)
-    operation, symbol = random.choice(FUNC_LIST)
+    operation, symbol = random.choice(OPERATIONS)
     answer = str(operation(num1, num2))
     task = "{} {} {}".format(num1, symbol, num2)
     return (task, answer)

@@ -2,7 +2,7 @@
 
 import prompt
 
-GAME_STEPS = 3
+GAME_STEPS_NUMBER = 3
 
 
 def run_game(game_module):
@@ -15,8 +15,8 @@ def run_game(game_module):
     """
     say_welcome(game_module.GAME_DESCRIPTION)
     user_name = get_user_name()
-    for step in range(GAME_STEPS):
-        (game_task, game_answer) = game_module.game_engine()
+    for step in range(GAME_STEPS_NUMBER):
+        (game_task, game_answer) = game_module.get_task()
         user_answer = get_user_answer(game_task)
         if user_answer != game_answer:
             notify_wrong_answer(user_answer, game_answer, user_name)
