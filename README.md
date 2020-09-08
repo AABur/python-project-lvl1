@@ -6,11 +6,11 @@
 
 This is the first of four training projects on the Python Software Developer course on [Hexlet.io](https://ru.hexlet.io/professions/python/projects/49)
 
-The pakage contains five simple mathematics quiz games:
+The package contains five simple mathematics quiz games:
 
 - Even check `brain-even`
 - Calculator `brain-calc`
-- Greatest common divider `barin-gcd`
+- Greatest common divider `brain-gcd`
 - Arithmetic progression `brain-progression`
 - Prime number `brain-prime`
 
