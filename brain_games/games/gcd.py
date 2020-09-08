@@ -9,7 +9,7 @@ MIN_NUM = 1
 MAX_NUM = 20
 
 
-def game_engine():
+def get_task():
     """GCD game Q&A generation.
 
     generate two random Numbers

@@ -11,7 +11,7 @@ STEP_MAX = 10
 PROGERSSION_LENGTH = 10
 
 
-def game_engine():
+def get_task():
     """Progression game Q&A generation.
 
     It forms an arithmetic progression,
@@ -23,10 +23,10 @@ def game_engine():
     """
     start = random.randint(START_MIN, START_MAX)
     step = random.randint(STEP_MIN, STEP_MAX)
-    a_progression = [(start + (ind * step))
-                     for ind in range(PROGERSSION_LENGTH)]
-    hidden = random.randint(1, PROGERSSION_LENGTH)
-    answer = str(a_progression[hidden - 1])
-    a_progression[hidden - 1] = ".."
-    task = " ".join(str(ind) for ind in a_progression)
+    progression = [(start + (ind * step))
+                   for ind in range(PROGERSSION_LENGTH)]
+    hidden_element_index = random.randint(0, PROGERSSION_LENGTH - 1)
+    answer = str(progression[hidden_element_index])
+    progression[hidden_element_index] = ".."
+    task = " ".join(str(ind) for ind in progression)
     return (task, answer)
