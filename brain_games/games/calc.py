@@ -5,7 +5,7 @@ from operator import add, mul, sub
 
 GAME_DESCRIPTION = "What is the result of the expression?"
 
-OPERATIONS = ((add, '+'), (sub, '-'), (mul, '*'))
+OPERATIONS = [(add, '+'), (sub, '-'), (mul, '*')]
 
 MIN_NUM = 1
 MAX_NUM = 20
