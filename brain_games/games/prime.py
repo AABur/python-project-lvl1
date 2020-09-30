@@ -2,25 +2,25 @@
 
 import random
 
-GAME_DESCRIPTION = 'Answer "yes" if number prime otherwise answer "no".'
+GAME_DESCRIPTION = "Answer 'yes' if number prime otherwise answer 'no'."
 
 MIN_NUM = 1
-MAX_NUM = 100
+MAX_NUM = 20
 
 
-def get_challenge():
+def get_task():
     """Prime game Q&A generation.
 
     generate random Number and check if a Number is Prime
 
     Returns:
-        question{str} : Number;
+        task{str} : Number;
         answer{str} : Prime status
     """
     num = random.randint(MIN_NUM, MAX_NUM)
-    answer = 'yes' if is_prime(num) else 'no'
-    question = '{}'.format(num)
-    return (question, answer)
+    answer = "yes" if is_prime(num) else "no"
+    task = "{}".format(num)
+    return (task, answer)
 
 
 def is_prime(num):

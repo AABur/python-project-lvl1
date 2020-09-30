@@ -2,7 +2,7 @@
 
 import random
 
-GAME_DESCRIPTION = 'What number is missing in the progression?'
+GAME_DESCRIPTION = "What number is missing in the progression?"
 
 START_MIN = 1
 START_MAX = 20
@@ -11,14 +11,14 @@ STEP_MAX = 10
 PROGERSSION_LENGTH = 10
 
 
-def get_challenge():
+def get_task():
     """Progression game Q&A generation.
 
     It forms an arithmetic progression,
     replacing one of the numbers with two points.
 
     Returns:
-        question{str} : arithmetic progression;
+        task{str} : arithmetic progression;
         answer{str} : hidden number
     """
     start = random.randint(START_MIN, START_MAX)
@@ -27,6 +27,6 @@ def get_challenge():
                    for ind in range(PROGERSSION_LENGTH)]
     hidden_element_index = random.randint(0, PROGERSSION_LENGTH - 1)
     answer = str(progression[hidden_element_index])
-    progression[hidden_element_index] = '..'
-    question = ' '.join(str(ind) for ind in progression)
-    return (question, answer)
+    progression[hidden_element_index] = ".."
+    task = " ".join(str(ind) for ind in progression)
+    return (task, answer)

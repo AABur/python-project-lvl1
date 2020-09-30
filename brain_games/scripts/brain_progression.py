@@ -11,5 +11,5 @@ def main():
     run_game(progression)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
